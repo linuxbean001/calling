@@ -2,7 +2,37 @@
 
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
+const https = require('https');
+const querystring = require('querystring');
+const data = JSON.stringify({
+  grant_type: "client_credentials",
+})
+const options = {
+  hostname: 'https://auth.streams.us/auth',
+  port: 80,
+  path: '/token',
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+	'Content-Type: application/x-www-form-urlencoded',
+	'Authorization: Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
+    'Content-Length': data.length,
+  },
+}
+const req = https.request(options, (res) => {
+  console.log(res)
 
+  res.on('data', (d) => {
+    //process.stdout.write(d)
+  })
+})
+
+req.on('error', (error) => {
+  console.error(error)
+})
+
+req.write(data)
+req.end()
 const callback = () => {
   let rowId = 0;
   const incomingMsgContainer = document.querySelector("#incomingMsgs");
