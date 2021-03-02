@@ -2,8 +2,7 @@
 
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
-const https = require('https');
-const querystring = require('querystring');
+
 const request = require('request');
 
 var headers = {
