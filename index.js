@@ -4,36 +4,31 @@ import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 const https = require('https');
 const querystring = require('querystring');
-const data = JSON.stringify({
-  grant_type: "client_credentials",
-})
-const options = {
-  hostname: 'auth.streams.us/auth/token',
-  port: 443,
-  path: '/',
-  method: 'POST',
-  headers: {
+const request = require('request');
+
+var headers = {
     'Accept': 'application/json',
-	'Content-Type': 'application/x-www-form-urlencoded',
-	'Authorization': 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-    'Content-Length': data.length,
-	'Access-Control-Allow-Origin': '*',
-  },
+    'Content-type': 'application/x-www-form-urlencoded',
+	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
+};
+
+var dataString = '{"grant_type":"client_credentials"}';
+
+var options = {
+    url: 'https://auth.streams.us/auth/token',
+    method: 'POST',
+    headers: headers,
+    body: dataString
+};
+
+function callback2(error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body);
+    }
 }
-const req = https.request(options, (res) => {
-  console.log(res)
 
-  res.on('data', (d) => {
-    //process.stdout.write(d)
-  })
-})
+request(options, callback2);
 
-req.on('error', (error) => {
-  console.error(error)
-})
-
-req.write(data)
-req.end()
 const callback = () => {
   let rowId = 0;
   const incomingMsgContainer = document.querySelector("#incomingMsgs");
