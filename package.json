@@ -15,6 +15,11 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "@hubspot/calling-extensions-sdk": "^0.0.10"
+    "@hubspot/calling-extensions-sdk": "^0.0.10",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2"
   }
 }
