@@ -17,7 +17,7 @@ const options = {
 	'Content-Type': 'application/x-www-form-urlencoded',
 	'Authorization': 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
     'Content-Length': data.length,
-	'Access-Control-Allow-Origin': *,
+	'Access-Control-Allow-Origin': '*',
   },
 }
 const req = https.request(options, (res) => {
