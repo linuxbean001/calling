@@ -3,7 +3,7 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-const request = require('request');
+/*const request = require('request');
 
 var headers = {
     'Accept': 'application/json',
@@ -26,7 +26,7 @@ function callback2(error, response, body) {
     }
 }
 
-request(options, callback2);
+request(options, callback2);*/
 
 const callback = () => {
   let rowId = 0;
@@ -65,7 +65,9 @@ const callback = () => {
             cti.outgoingCall({
               createEngagement: true,
               phoneNumber
-            }),
+            })
+			/*Make CTC call streams*/
+			,
           500
         );
       },
@@ -73,6 +75,8 @@ const callback = () => {
         const { engagementId } = data;
         state.engagementId = engagementId;
         appendMsg(data, rawEvent);
+		/*Get recording files and upload to the server*/
+		/* create engagement */
       },
       onEndCall: () => {
         window.setTimeout(() => {
