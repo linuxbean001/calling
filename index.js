@@ -14,8 +14,8 @@ const options = {
   method: 'POST',
   headers: {
     'Accept': 'application/json',
-	'Content-Type: application/x-www-form-urlencoded',
-	'Authorization: Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
+	'Content-Type': 'application/x-www-form-urlencoded',
+	'Authorization': 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
     'Content-Length': data.length,
   },
 }
