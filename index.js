@@ -9,7 +9,7 @@ const data = JSON.stringify({
 })
 const options = {
   hostname: 'auth.streams.us/auth/token',
-  //port: 80,
+  port: 443,
   path: '/',
   method: 'POST',
   headers: {
