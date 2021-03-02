@@ -8,9 +8,9 @@ const data = JSON.stringify({
   grant_type: "client_credentials",
 })
 const options = {
-  hostname: 'https://auth.streams.us/auth',
+  hostname: 'auth.streams.us/auth/token',
   //port: 80,
-  path: '/token',
+  path: '/',
   method: 'POST',
   headers: {
     'Accept': 'application/json',
