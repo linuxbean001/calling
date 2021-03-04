@@ -19,7 +19,7 @@ const options = {
     headers: headers,
     form: dataString
 };
-request(options, function(err, res, body) {
+request.post(options, function(err, res, body) {
     let json = JSON.parse(body);
     console.log(json);
 });
