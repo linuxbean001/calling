@@ -3,9 +3,8 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-const request = require('request');
-
-const fetch = require('node-fetch');
+const http = require('http');
+const qs = require('querystring');
 
 
 const headers = {
@@ -16,36 +15,20 @@ const headers = {
 
 const dataString = {grant_type:"client_credentials"};
 
+var formData = querystring.stringify(dataString);
+var contentLength = formData.length;
+
 const options = {
     url: 'https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
-    form: dataString
+    body: formData
 };
-/*request.post(options, function(err, res, body) {
-    let json = JSON.parse(body);
-    console.log(json);
-});*/
 
-fetch('https://auth.streams.us/auth/token', {
-  method: 'POST',
-  headers: {
-	  'accept': 'application/json',
-    'content-type': 'application/x-www-form-urlencoded',
-    authorization: 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ=='
-  },
-  body: {
-    grant_type: 'client_credentials'
-  }
-})
-  .then(response => {
-    console.log(response)
-  })
-  .catch(err => {
-    console.log(err)
-  });
-
-
+request.post(options,function (e, r, body) {
+    // your callback body
+	console.log(r);
+});
 
 
 const callback = () => {
