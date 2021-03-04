@@ -5,6 +5,9 @@ import { errorType } from "./Constants.js";
 
 const request = require('request');
 
+const fetch = require('node-fetch');
+
+
 const headers = {
     'Accept': 'application/json',
     'Content-type': 'application/x-www-form-urlencoded',
@@ -19,17 +22,29 @@ const options = {
     headers: headers,
     form: dataString
 };
-request.post(options, function(err, res, body) {
+/*request.post(options, function(err, res, body) {
     let json = JSON.parse(body);
     console.log(json);
-});
+});*/
 
+fetch('https://auth.streams.us/auth/token', {
+  method: 'POST',
+  headers: {
+	  'accept': 'application/json',
+    'content-type': 'application/x-www-form-urlencoded',
+    authorization: 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ=='
+  },
+  body: {
+    grant_type: 'client_credentials'
+  }
+})
+  .then(response => {
+    console.log(response)
+  })
+  .catch(err => {
+    console.log(err)
+  });
 
-
-var header2 = {
-    'Content-type': 'application/x-www-form-urlencoded',
-	'Authorization' : 'Bearer eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-};
 
 
 
