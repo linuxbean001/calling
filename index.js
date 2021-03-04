@@ -6,6 +6,22 @@ import { errorType } from "./Constants.js";
 var axios = require("axios").default;
 
 
+
+
+
+
+const callback = () => {
+  let rowId = 0;
+  const incomingMsgContainer = document.querySelector("#incomingMsgs");
+  function appendMsg(data, event) {
+    const div = document.createElement("div");
+    rowId += 1;
+    div.innerHTML = `<span>${rowId}: </span><span>${
+      event.type
+    }, ${JSON.stringify(data)}</span>`;
+    incomingMsgContainer.append(div);
+  }
+  
 const headers = {
     'accept': 'application/json',
     'content-type': 'application/x-www-form-urlencoded',
@@ -21,27 +37,13 @@ const options = {
     headers: headers,
     data: dataString
 };
-
-console.log(options);
+  console.log(options);
 
 axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
 });
-
-
-const callback = () => {
-  let rowId = 0;
-  const incomingMsgContainer = document.querySelector("#incomingMsgs");
-  function appendMsg(data, event) {
-    const div = document.createElement("div");
-    rowId += 1;
-    div.innerHTML = `<span>${rowId}: </span><span>${
-      event.type
-    }, ${JSON.stringify(data)}</span>`;
-    incomingMsgContainer.append(div);
-  }
 
   const defaultSize = {
     width: 400,
