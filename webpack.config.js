@@ -9,7 +9,7 @@ module.exports = {
     libraryTarget: "umd",
     path: path.resolve(__dirname, "bin")
   },
-  target: 'node',
+  //target: 'node',
   devServer: {
     contentBase: "./",
     publicPath: "/bin",

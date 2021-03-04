@@ -13,7 +13,7 @@ const headers = {
 	'Access-Control-Allow-Origin': '*',
 	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
 	//'Access-Control-Max-Age': '7200',
-	'Access-Control-Allow-Headers': '*',
+	//'Access-Control-Allow-Headers': '*',
 };
 
 const dataString = {grant_type:"client_credentials"};
