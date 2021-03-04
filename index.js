@@ -26,7 +26,7 @@ const headers = {
     'accept': 'application/json',
     'content-type': 'application/x-www-form-urlencoded',
 	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-	'Access-Control-Allow-Origin': *,
+	'Access-Control-Allow-Origin': '*',
 };
 
 const dataString = {grant_type:"client_credentials"};
