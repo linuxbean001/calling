@@ -3,31 +3,29 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-const http = require('http');
-const qs = require('querystring');
+var axios = require("axios").default;
 
 
 const headers = {
-    'Accept': 'application/json',
-    'Content-type': 'application/x-www-form-urlencoded',
+    'accept': 'application/json',
+    'content-type': 'application/x-www-form-urlencoded',
 	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
 };
 
 const dataString = {grant_type:"client_credentials"};
 
-var formData = querystring.stringify(dataString);
-var contentLength = formData.length;
 
 const options = {
     url: 'https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
-    body: formData
+    data: dataString
 };
 
-request.post(options,function (e, r, body) {
-    // your callback body
-	console.log(r);
+axios.request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
 });
 
 
