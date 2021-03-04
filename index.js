@@ -3,7 +3,7 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-/*const request = require('request');
+const request = require('request');
 
 var headers = {
     'Accept': 'application/json',
@@ -11,7 +11,7 @@ var headers = {
 	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
 };
 
-var dataString = '{"grant_type":"client_credentials"}';
+var dataString = {grant_type:"client_credentials"};
 
 var options = {
     url: 'https://auth.streams.us/auth/token',
@@ -24,28 +24,12 @@ function callback2(error, response, body) {
     if (!error && response.statusCode == 200) {
         console.log(body);
     }
+	console.log(response);
 }
 
-request(options, callback2);*/
+request(options, callback2);
 
-const axios = require('axios');
-const qs = require('querystring');
-const  data = {grant_type:"client_credentials"};
-const config  = {
-	headers: {
-    'Accept': 'application/json',
-    'Content-type': 'application/x-www-form-urlencoded',
-	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-	}
-};
 
-axios.post('https://auth.streams.us/auth/token', qs.stringify(data), config)
-    .then((res) => {
-        console.log(`Status: ${res.status}`);
-        console.log('Body: ', res.data);
-    }).catch((err) => {
-        console.error(err);
-    });
 
 var header2 = {
     'Content-type': 'application/x-www-form-urlencoded',
