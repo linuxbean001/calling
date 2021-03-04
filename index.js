@@ -3,7 +3,7 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-/*const request = require('request');
+const request = require('request');
 
 var headers = {
     'Accept': 'application/json',
@@ -26,7 +26,14 @@ function callback2(error, response, body) {
     }
 }
 
-request(options, callback2);*/
+request(options, callback2);
+
+var header2 = {
+    'Content-type': 'application/x-www-form-urlencoded',
+	'Authorization' : 'Bearer eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
+};
+
+
 
 const callback = () => {
   let rowId = 0;
@@ -76,11 +83,12 @@ const callback = () => {
         state.engagementId = engagementId;
         appendMsg(data, rawEvent);
 		/*Get recording files and upload to the server*/
-		/* create engagement */
+		
       },
       onEndCall: () => {
         window.setTimeout(() => {
           cti.callEnded();
+		  /* create engagement */
         }, 500);
       },
       onVisibilityChanged: (data, rawEvent) => {
