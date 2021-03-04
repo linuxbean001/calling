@@ -30,7 +30,7 @@ request(options, callback2);*/
 
 const axios = require('axios');
 const qs = require('querystring');
-const  data = '{grant_type:"client_credentials"}';
+const  data = {grant_type:"client_credentials"};
 const config  = {
 	headers: {
     'Accept': 'application/json',
