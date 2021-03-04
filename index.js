@@ -5,22 +5,6 @@ import { errorType } from "./Constants.js";
 
 var axios = require("axios").default;
 
-
-
-
-
-
-const callback = () => {
-  let rowId = 0;
-  const incomingMsgContainer = document.querySelector("#incomingMsgs");
-  function appendMsg(data, event) {
-    const div = document.createElement("div");
-    rowId += 1;
-    div.innerHTML = `<span>${rowId}: </span><span>${
-      event.type
-    }, ${JSON.stringify(data)}</span>`;
-    incomingMsgContainer.append(div);
-  }
   
 const headers = {
     'accept': 'application/json',
@@ -48,6 +32,22 @@ axios.request(options).then(function (response) {
 }).catch(function (error) {
   console.error(error);
 });
+
+
+
+
+const callback = () => {
+  let rowId = 0;
+  const incomingMsgContainer = document.querySelector("#incomingMsgs");
+  function appendMsg(data, event) {
+    const div = document.createElement("div");
+    rowId += 1;
+    div.innerHTML = `<span>${rowId}: </span><span>${
+      event.type
+    }, ${JSON.stringify(data)}</span>`;
+    incomingMsgContainer.append(div);
+  }
+
 
   const defaultSize = {
     width: 400,
