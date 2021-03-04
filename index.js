@@ -5,29 +5,24 @@ import { errorType } from "./Constants.js";
 
 const request = require('request');
 
-var headers = {
+const headers = {
     'Accept': 'application/json',
     'Content-type': 'application/x-www-form-urlencoded',
 	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
 };
 
-var dataString = {grant_type:"client_credentials"};
+const dataString = {grant_type:"client_credentials"};
 
-var options = {
+const options = {
     url: 'https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
-    body: dataString
+    form: dataString
 };
-console.log();
-function callback2(error, response, body) {
-    if (!error && response.statusCode == 200) {
-        console.log(body);
-    }
-	console.log(response);
-}
-
-request(options, callback2);
+request(options, function(err, res, body) {
+    let json = JSON.parse(body);
+    console.log(json);
+});
 
 
 
