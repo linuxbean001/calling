@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@hubspot/calling-extensions-sdk": "^0.0.10",
+    "axios": "^0.21.1",
     "http": "0.0.1-security",
     "https": "^1.0.0",
     "net": "^1.0.2",
