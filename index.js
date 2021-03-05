@@ -3,7 +3,7 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-var axios = require("axios").default;
+/*var axios = require("axios").default;
 
   
 const headers = {
@@ -32,7 +32,7 @@ axios.request(options).then(function (response) {
 }).catch(function (error) {
   console.error(error);
 });
-
+*/
 
 
 
