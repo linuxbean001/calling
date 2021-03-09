@@ -3,9 +3,8 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-/*var axios = require("axios").default;
+var axios = require("axios").default;
 
-  
 const headers = {
     'accept': 'application/json',
     'content-type': 'application/x-www-form-urlencoded',
@@ -13,7 +12,7 @@ const headers = {
 	'Access-Control-Allow-Origin': '*',
 	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
 	//'Access-Control-Max-Age': '7200',
-	//'Access-Control-Allow-Headers': '*',
+	'Access-Control-Allow-Headers': '*',
 };
 
 const dataString = {grant_type:"client_credentials"};
@@ -32,7 +31,7 @@ axios.request(options).then(function (response) {
 }).catch(function (error) {
   console.error(error);
 });
-*/
+
 
 
 
