@@ -5,35 +5,6 @@ import { errorType } from "./Constants.js";
 
 var axios = require("axios").default;
 
-const headers = {
-    'accept': 'application/json',
-    'content-type': 'application/x-www-form-urlencoded',
-	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-	'Access-Control-Allow-Origin': '*',
-	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-	//'Access-Control-Max-Age': '7200',
-	'Access-Control-Allow-Headers': '*',
-};
-
-const dataString = {grant_type:"client_credentials"};
-
-
-const options = {
-    url: 'https://auth.streams.us/auth/token',
-    method: 'POST',
-    headers: headers,
-    data: dataString
-};
-  console.log(options);
-
-axios.request(options).then(function (response) {
-  console.log(response.data);
-}).catch(function (error) {
-  console.error(error);
-});
-
-
-
 
 const callback = () => {
   let rowId = 0;
@@ -63,6 +34,35 @@ const callback = () => {
           isLoggedIn: true,
           sizeInfo: defaultSize
         });
+		/**/
+		const headers = {
+    'accept': 'application/json',
+    'content-type': 'application/x-www-form-urlencoded',
+	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
+	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+	//'Access-Control-Max-Age': '7200',
+	'Access-Control-Allow-Headers': '*',
+};
+
+const dataString = {grant_type:"client_credentials"};
+
+
+const options = {
+    url: 'https://auth.streams.us/auth/token',
+    method: 'POST',
+    headers: headers,
+    data: dataString
+};
+  console.log(options);
+
+axios.request(options).then(function (response) {
+  console.log(response.data);
+}).catch(function (error) {
+  console.error(error);
+});
+
+		/**/
       },
       onDialNumber: (data, rawEvent) => {
         appendMsg(data, rawEvent);
