@@ -39,7 +39,7 @@ const callback = () => {
     'accept': 'application/json',
     'content-type': 'application/x-www-form-urlencoded',
 	'Authorization' : 'Basic eW1INnJKR3RmWE42bGZYVDp3SGU1Y0VwT2pGVVVUM1ZyektBVU9vYlVWdmtJU2prQQ==',
-	'Access-Control-Allow-Origin': '*',
+	'Access-Control-Allow-Origin': 'calling.vercel.app',
 	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
 	//'Access-Control-Max-Age': '7200',
 	'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
