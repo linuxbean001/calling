@@ -57,12 +57,29 @@ const options = {
 };
   console.log(options);
 
-axios.request(options).then(function (response) {
+/*axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
-});
+});*/
 
+
+const getOAuthToken = () =>  axios({
+        method: "post",
+        url: "https://auth.streams.us/auth/token",
+        data: {
+            grant_type: "client_credentials"
+            },
+        headers: headers
+    });
+getOAuthToken()
+        .then(response => {
+            this.info = response;
+            })
+            .catch(error => {
+                this.errormsg = error;
+            console.log(error);
+        });
 		/**/
       },
       onDialNumber: (data, rawEvent) => {
