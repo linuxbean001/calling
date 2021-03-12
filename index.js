@@ -2,7 +2,8 @@
 
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
-
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 //var axios = require("axios").default;
 const request = require('request');
 
