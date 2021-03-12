@@ -4,8 +4,7 @@ import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
 //var axios = require("axios").default;
-const express = require('express')
-const app = express()
+const request = require('request');
 
 const callback = () => {
   let rowId = 0;
@@ -58,20 +57,9 @@ const options = {
 };
   console.log(options);
 
-app.post('https://auth.streams.us/auth/token',{
-	method: 'POST',
-    headers: headers,
-    body: dataString
-	.then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log('Request succeeded with JSON response', data);
-    })
-    .catch(function(error) {
-        console.log('Request failed', error);
-    });
-	
+request(options, function(err, res, body) {
+    let json = JSON.parse(body);
+    console.log(json);
 });
 /*axios.request(options).then(function (response) {
   console.log(response.data);
