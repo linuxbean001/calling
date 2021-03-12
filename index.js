@@ -6,6 +6,7 @@ import { errorType } from "./Constants.js";
 var axios = require("axios").default;
 
 
+
 const callback = () => {
   let rowId = 0;
   const incomingMsgContainer = document.querySelector("#incomingMsgs");
@@ -57,14 +58,16 @@ const options = {
 };
   console.log(options);
 
-/*axios.request(options).then(function (response) {
+
+
+axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
-});*/
+});
 
 
-const getOAuthToken = () =>  axios({
+/*const getOAuthToken = () =>  axios({
         method: "post",
         url: "https://auth.streams.us/auth/token",
         data: {
@@ -79,7 +82,7 @@ getOAuthToken()
             .catch(error => {
                 this.errormsg = error;
             console.log(error);
-        });
+        });*/
 		/**/
       },
       onDialNumber: (data, rawEvent) => {
