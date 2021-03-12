@@ -3,8 +3,9 @@
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
 
-var axios = require("axios").default;
-
+//var axios = require("axios").default;
+const express = require('express')
+const app = express()
 
 const callback = () => {
   let rowId = 0;
@@ -48,20 +49,35 @@ const callback = () => {
 
 const dataString = {grant_type:"client_credentials"};
 
-var purl = "https://cors-anywhere.herokuapp.com/";
+
 const options = {
-    url: purl+'https://auth.streams.us/auth/token',
+    url: 'https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
     data: dataString
 };
   console.log(options);
 
-axios.request(options).then(function (response) {
+app.post('https://auth.streams.us/auth/token',{
+	method: 'POST',
+    headers: headers,
+    body: dataString
+	.then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log('Request succeeded with JSON response', data);
+    })
+    .catch(function(error) {
+        console.log('Request failed', error);
+    });
+	
+});
+/*axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
-});
+});*/
 
 		/**/
       },
