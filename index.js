@@ -50,7 +50,7 @@ const dataString = {grant_type:"client_credentials"};
 
 
 const options = {
-    url: 'https://auth.streams.us/auth/token',
+    url: 'https://cors-anywhere.herokuapp.com/https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
     data: dataString
