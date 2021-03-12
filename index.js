@@ -2,10 +2,9 @@
 
 import CallingExtensions from "./CallingExtensions.js";
 import { errorType } from "./Constants.js";
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-//var axios = require("axios").default;
-const request = require('request');
+
+var axios = require("axios").default;
+
 
 const callback = () => {
   let rowId = 0;
@@ -58,15 +57,11 @@ const options = {
 };
   console.log(options);
 
-request(options, function(err, res, body) {
-    let json = JSON.parse(body);
-    console.log(json);
-});
-/*axios.request(options).then(function (response) {
+axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
-});*/
+});
 
 		/**/
       },
