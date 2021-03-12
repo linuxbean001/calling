@@ -43,7 +43,7 @@ const callback = () => {
 	'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
 	//'Access-Control-Max-Age': '7200',
 	'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-	'Access-Control-Allow-Credentials', true
+	'Access-Control-Allow-Credentials': true
 };
 
 const dataString = {grant_type:"client_credentials"};
