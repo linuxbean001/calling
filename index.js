@@ -48,9 +48,9 @@ const callback = () => {
 
 const dataString = {grant_type:"client_credentials"};
 
-
+var purl = "https://cors-anywhere.herokuapp.com/";
 const options = {
-    url: 'https://cors-anywhere.herokuapp.com/https://auth.streams.us/auth/token',
+    url: purl+'https://auth.streams.us/auth/token',
     method: 'POST',
     headers: headers,
     data: dataString
