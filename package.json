@@ -18,6 +18,7 @@
     "@hubspot/api-client": "^3.4.1",
     "@hubspot/calling-extensions-sdk": "^0.0.10",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "file-system": "^2.2.2",
     "fs": "0.0.1-security",
