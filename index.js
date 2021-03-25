@@ -60,13 +60,21 @@ const options = {
 
 
 
-axios.request(options).then(function (response) {
+/*axios.request(options).then(function (response) {
   console.log(response.data);
 }).catch(function (error) {
   console.error(error);
-});
+});*/
 
 
+axios.get('https://kasturioil.com/2/makecall.php')
+  .then(response => {
+    console.log(response);
+    //console.log(response.data.explanation);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 /*const getOAuthToken = () =>  axios({
         method: "post",
         url: "https://auth.streams.us/auth/token",
